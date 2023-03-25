@@ -1,0 +1,23 @@
+
+it('should calculate the monthly rate correctly', function () {
+  const values = {
+    amount: 100000,
+    years: 10,
+    rate: 3.5
+  };
+  expect(calculateMonthlyPayment(values)).toEqual('988.86')
+});
+
+
+it("should return a result with 2 decimal places", function() {
+  const values = {
+    amount: 100000,
+    years: 5,
+    rate: 2.0
+  }
+  const monthlyPayment = calculateMonthlyPayment(values);
+  const decimalPlaces = monthlyPayment.split('.')[1].length;
+  expect(decimalPlaces).toEqual(2);
+});
+
+/// etc
